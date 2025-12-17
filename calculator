@@ -1,0 +1,148 @@
+building a simple calcualtor using functions       
+def add(x, y):
+    return x + y
+def subtract(x, y):
+    return x - y
+def multiply(x, y):
+    return x * y
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+def percentage(x, y):
+    return (x / y) * 100
+def power(x, y):
+    return x ** y
+def sqrt(x):
+    if x < 0:
+        return "Error! Square root of negative number."
+    return x ** 0.5
+def modulus(x,y):
+    return x % y
+def floor_division(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x // y
+def square_root(x):
+    if x < 0:
+        return "Error! Square root of negative number."
+    return x ** 0.5
+def cube_root(x):
+    if x < 0:
+        return -(-x) ** (1/3)
+    return x ** (1/3)
+def logarithm(x, base):
+    import math
+    if x <= 0 or base <= 1:
+        return "Error! Logarithm undefined for these values."
+    return math.log(x, base)    
+def factorial(x):
+    import math
+    if not isinstance(x, int) or x < 0:
+        return "Error! Factorial requires a non-negative integer."
+    return math.factorial(x)
+def exponential(x):
+    import math
+    return math.exp(x)
+def gcd(x, y):
+    import math
+    return math.gcd(int(x), int(y))
+def lcm(x, y):
+    import math
+    return abs(int(x) * int(y)) // math.gcd(int(x), int(y))
+def is_prime(x):
+    if x <= 1 or not isinstance(x, int):
+        return False
+    for i in range(2, int(x**0.5) + 1):
+        if x % i == 0:
+            return False
+    return True
+def fibonacci(n):
+    if not isinstance(n, int) or n <= 0:
+        return "Error! Fibonacci requires a positive integer."
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+def sin(x):
+    import math
+    return math.sin(math.radians(x))
+def cos(x):
+    import math
+    return math.cos(math.radians(x))
+def tan(x):
+    import math
+    return math.tan(math.radians(x))
+print("Select operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+print("5. Percentage")
+print("6. Power")   
+print("7. Square Root")
+print("8. Modulus")
+print("9. Floor Division")
+print("10. Cube Root")
+print("11. Logarithm")
+print("12. Factorial")
+print("13. Exponential")
+print("14. GCD")
+print("15. LCM")
+print("16. Prime Check")
+print("17. Fibonacci Sequence")
+print("18. Sine")
+print("19. Cosine")
+print("20. Tangent")
+while True:
+    choice = input("Enter choice (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20): ")
+    if choice in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        if choice == '1':
+            print(f"{num1} + {num2} = {add(num1, num2)}")
+        elif choice == '2':
+            print(f"{num1} - {num2} = {subtract(num1, num2)}")
+        elif choice == '3':
+            print(f"{num1} * {num2} = {multiply(num1, num2)}")
+        elif choice == '4':
+            print(f"{num1} / {num2} = {divide(num1, num2)}")
+        elif choice == '5':
+            print(f"{num1} is {percentage(num1, num2)}% of {num2}")
+        elif choice == '6':
+            print(f"{num1} ^ {num2} = {power(num1, num2)}")
+        elif choice == '7':
+            print(f"Square root of {num1} = {sqrt(num1)}")
+        elif choice == '8':
+            print(f"{num1} % {num2} = {modulus(num1, num2)}")
+        elif choice == '9': 
+            print(f"{num1} // {num2} = {floor_division(num1, num2)}")
+        elif choice == '10':
+            print(f"Cube root of {num1} = {cube_root(num1)}")
+        elif choice == '11':
+            print(f"log base {num2} of {num1} = {logarithm(num1, num2)}")
+        elif choice == '12':
+            print(f"{int(num1)}! = {factorial(int(num1))}")
+        elif choice == '13':
+            print(f"e ^ {num1} = {exponential(num1)}")
+        elif choice == '14':
+            print(f"GCD of {int(num1)} and {int(num2)} = {gcd(int(num1), int(num2))}")
+        elif choice == '15':
+            print(f"LCM of {int(num1)} and {int(num2)} = {lcm(int(num1), int(num2))}")
+        elif choice == '16':
+            print(f"{int(num1)} is {'prime' if is_prime(int(num1)) else 'not prime'}")
+        elif choice == '17':
+            print(f"Fibonacci sequence up to {int(num1)} terms: {fibonacci(int(num1))}")
+        elif choice == '18':
+            print(f"sin({num1}) = {sin(num1)}")
+        elif choice == '19':
+            print(f"cos({num1}) = {cos(num1)}")
+        elif choice == '20':
+            print(f"tan({num1}) = {tan(num1)}")
+        next_calculation = input("Do you want to perform another calculation? (yes/no): ")
+        if next_calculation.lower() != 'yes':
+            break
+    else:
+        print("Invalid Input")
