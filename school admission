@@ -1,0 +1,20 @@
+def school_admission(name, age, email, grade):
+    """Check student eligibility for school admission based on grade."""
+    eligible_grade = 70
+    student_profile = {
+            "name": name,
+            "age": age,
+            "email": email,
+            "grade": grade,
+            "message": f"Congratulations {name}, you have been admitted to our school"
+        }
+    if grade >= eligible_grade:
+        return student_profile
+    else: 
+        return f"Sorry {name}, you are not eligible for admission"
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+email = input("Enter your email: ")
+grade = float(input("Enter your grade (0-100): "))
+result = school_admission(name, age, email, grade)
+print(result)
